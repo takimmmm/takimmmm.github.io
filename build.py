@@ -49,6 +49,7 @@ def main():
             meta, body = parse(fp); write(f"{f}.html", page(meta["title"], markdown.markdown(body, extensions=["extra"]), "", f"/{f}.html"))
     urls = ["/"] + [f"/{m['slug']}.html" for m, _ in posts] + [f"/{f}.html" for f in ("about","contact","privacy")]
     write("sitemap.xml", '<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">' + "".join(f"<url><loc>{CFG['url']}{u}</loc></url>" for u in urls) + "</urlset>")
+    write(".nojekyll", "")
     write("robots.txt", f"User-agent: *\nAllow: /\nSitemap: {CFG['url']}/sitemap.xml\n")
     pub = CFG["adsense"].replace("ca-pub-", "pub-")
     if pub: write("ads.txt", f"google.com, {pub}, DIRECT, f08c47fec0942fa0\n")
