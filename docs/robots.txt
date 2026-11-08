@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://takimmmm.github.io/sitemap.xml

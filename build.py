@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import os, re, glob, html, datetime, markdown
 ROOT = os.path.dirname(os.path.abspath(__file__))
-SITE = os.path.join(ROOT, "site")
+SITE = os.path.join(ROOT, "docs")
 import json
 _c = json.load(open(os.path.join(ROOT, "config.json"))) if os.path.exists(os.path.join(ROOT, "config.json")) else {}
 CFG = {"name": "أمانكم", "tagline": "دليلك لحماية خصوصيتك وحساباتك على الإنترنت",
